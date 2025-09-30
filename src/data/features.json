@@ -1,0 +1,121 @@
+[
+  {
+    "name": "base-protocol",
+    "title": "Base Protocol",
+    "category": "core",
+    "description": "Defines the message format (requests, responses, notifications) between client and server using JSON-RPC 2.0.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18"
+  },
+  {
+    "name": "lifecycle",
+    "title": "Lifecycle",
+    "category": "core",
+    "description": "Manages initialization, capability negotiation, and shutdown between client and server.",
+    "link": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2025-06-18/basic/lifecycle.mdx"
+  },
+  {
+    "name": "transport",
+    "title": "Transport",
+    "category": "core",
+    "description": "Specifies how messages are transmitted (stdio, HTTP streaming, custom transports).",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/transports"
+  },
+  {
+    "name": "authorization",
+    "title": "Authorization",
+    "category": "core",
+    "description": "Provides OAuth-based authentication/authorization for HTTP transports.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization"
+  },
+  {
+    "name": "utilities",
+    "title": "Utilities",
+    "category": "core",
+    "description": "Cross-cutting support for error handling, structured messages, and other shared mechanics.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18"
+  },
+  {
+    "name": "resources",
+    "title": "Resources",
+    "category": "server_feature",
+    "description": "Servers expose read-only contextual data (files, database records, APIs) that clients/models can fetch.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/server/resources"
+  },
+  {
+    "name": "prompts",
+    "title": "Prompts",
+    "category": "server_feature",
+    "description": "Servers define reusable prompt templates with parameters that clients/models can list and invoke.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/server/prompts"
+  },
+  {
+    "name": "tools",
+    "title": "Tools",
+    "category": "server_feature",
+    "description": "Servers expose structured operations or actions (functions) that clients/models can call.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
+  },
+  {
+    "name": "logging",
+    "title": "Logging",
+    "category": "server_feature",
+    "description": "Servers can emit structured log messages back to the client for visibility and debugging.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/logging"
+  },
+  {
+    "name": "completion-autocomplete",
+    "title": "Completion (Autocomplete)",
+    "category": "server_feature",
+    "description": "Servers can provide argument autocompletion for prompts, tools, or other features when requested by the client.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/completion"
+  },
+  {
+    "name": "progress-notifications",
+    "title": "Progress Notifications",
+    "category": "server_feature",
+    "description": "Servers can send progress updates during long-running operations so clients can display intermediate status.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/progress"
+  },
+  {
+    "name": "cancellation",
+    "title": "Cancellation",
+    "category": "server_feature",
+    "description": "Clients can request cancellation of an in-flight server operation if it's no longer needed.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/cancellation"
+  },
+  {
+    "name": "error-reporting",
+    "title": "Error Reporting",
+    "category": "server_feature",
+    "description": "Servers return structured errors with codes and messages when operations fail, enabling consistent client handling.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/errors"
+  },
+  {
+    "name": "experimental-features",
+    "title": "Experimental Features",
+    "category": "server_feature",
+    "description": "Servers can expose experimental or non-standard features under a controlled namespace for testing.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/index"
+  },
+  {
+    "name": "sampling",
+    "title": "Sampling",
+    "category": "client_feature",
+    "description": "Servers can request clients to generate completions (LLM outputs) under user control.",
+    "link": "https://modelcontextprotocol.io/docs/concepts/sampling"
+  },
+  {
+    "name": "roots",
+    "title": "Roots",
+    "category": "client_feature",
+    "description": "Clients expose filesystem roots or directories so servers know where they can safely operate.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/architecture"
+  },
+  {
+    "name": "elicitation",
+    "title": "Elicitation",
+    "category": "client_feature",
+    "description": "Clients can prompt the user for structured input during workflows triggered by servers.",
+    "link": "https://modelcontextprotocol.io/specification/2025-06-18/architecture"
+  }
+]
