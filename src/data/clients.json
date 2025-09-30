@@ -3,18 +3,18 @@
     "name": "claude-code",
     "title": "Claude Code",
     "link": "https://www.anthropic.com/products/claude-code",
-    "support": ["completion-autocomplete", "sampling", "roots", "elicitation"]
+    "support": []
   },
   {
     "name": "cursor",
     "title": "Cursor",
     "link": "https://www.cursor.com",
-    "support": ["completion-autocomplete", "sampling"]
+    "support": []
   },
   {
     "name": "vscode",
     "title": "VSCode",
     "link": "https://code.visualstudio.com",
-    "support": ["completion-autocomplete", "roots", "sampling"]
+    "support": []
   }
 ]

@@ -18,15 +18,25 @@ Shows clients from the clients data source, with each client displayed as a colu
 
 ### Show feature support status
 
-For each feature-client combination, displays a tick (✓) if the client supports the feature or a cross (✗) if not. Support is determined by checking if the feature's name is included in the client's support array.
+For each feature-client combination, displays one of three states:
+
+- Supported (✓): The feature's name is included in the client's support array
+- Not Supported (✗): The feature's name is prefixed with "!" in the client's support array (e.g., "!feature-name")
+- Unknown (?): The feature is neither explicitly supported nor unsupported
+
+The status indicators are displayed using DaisyUI badge components with outline style for soft colors:
+
+- `badge-success badge-outline` for supported features
+- `badge-error badge-outline` for unsupported features
+- `badge-warning badge-outline` for unknown status
 
 ### Group features by category
 
 Organizes features by their category property to improve readability and navigation.
 
-### Dark theme styling
+### DaisyUI styling
 
-Uses a dark color scheme with dark backgrounds (gray-800, gray-900) and light text (gray-100, white) for a modern dark theme appearance. Table headers use darker backgrounds with light text, and alternating row colors provide visual separation.
+Uses DaisyUI components and semantic classes for styling. The table uses DaisyUI's `table`, `table-zebra` (for automatic alternating row colors), and `table-pin-rows` (to pin the header when scrolling) classes. Links use `link link-primary` classes. Support status indicators use DaisyUI's `badge` component with outline variants (`badge-success badge-outline`, `badge-error badge-outline`) for soft, accessible colors. Category headers use `bg-base-300` for visual separation.
 
 ### Responsive table styling
 
@@ -65,6 +75,11 @@ export default FeatureCompatibilityTable;
 
 React library for building the component.
 [@use](npm:react)
+
+### DaisyUI
+
+Component library for Tailwind CSS providing pre-built UI components and semantic styling classes.
+[@use](npm:daisyui)
 
 ### Features data
 
