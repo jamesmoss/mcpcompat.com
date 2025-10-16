@@ -155,6 +155,12 @@
         "description": "Define specialized AI subagents for task-specific workflows."
       },
       {
+        "name": "chat-modes",
+        "title": "Custom chat modes",
+        "category": "api-surface",
+        "description": "Create specialist AI agents that enable you to tailor the chat experience for specific tasks."
+      },
+      {
         "name": "plugins",
         "title": "Plugins",
         "category": "api-surface",

@@ -3,30 +3,164 @@
     "name": "claude-code",
     "title": "Claude Code",
     "link": "https://www.anthropic.com/products/claude-code",
-    "support": []
+    "support": [
+      { "name": "transport", "support": "full" },
+      { "name": "authorization", "support": "full" },
+      { "name": "utilities", "support": "full" },
+      { "name": "resources", "support": "full" },
+      { "name": "prompts", "support": "full" },
+      { "name": "tools", "support": "full" },
+      { "name": "logging", "support": "full" },
+      { "name": "completion-autocomplete", "support": "full" },
+      {
+        "name": "progress-notifications",
+        "support": "partial",
+        "notes": "Receives notifications but doesn't display them in UI (Issue #3174)"
+      },
+      { "name": "cancellation", "support": "full" },
+      { "name": "error-reporting", "support": "full" },
+      { "name": "experimental-features", "support": "full" },
+      { "name": "sampling", "support": "full" },
+      { "name": "roots", "support": "full" },
+      {
+        "name": "elicitation",
+        "support": "none",
+        "notes": "Feature requested (Issues #2799, #7108) but not yet implemented"
+      },
+      { "name": "context-management", "support": "full" },
+      { "name": "references", "support": "full" },
+      { "name": "hooks", "support": "full" },
+      { "name": "slash-commands", "support": "full" },
+      { "name": "subagents", "support": "full" },
+      { "name": "plugins", "support": "full" },
+      { "name": "marketplace", "support": "full" },
+      { "name": "system-prompt-override", "support": "full" },
+      { "name": "other", "support": "full" }
+    ]
   },
   {
     "name": "cursor",
     "title": "Cursor",
     "link": "https://www.cursor.com",
     "support": [
+      { "name": "transport", "support": "full" },
+      { "name": "authorization", "support": "full" },
+      { "name": "utilities", "support": "full" },
+      { "name": "resources", "support": "none", "notes": "Not yet supported" },
+      {
+        "name": "prompts",
+        "support": "none",
+        "notes": "Not currently supported"
+      },
+      { "name": "tools", "support": "full" },
+      { "name": "logging", "support": "full" },
+      { "name": "completion-autocomplete", "support": "partial" },
+      { "name": "progress-notifications", "support": "partial" },
+      { "name": "cancellation", "support": "partial" },
+      { "name": "error-reporting", "support": "full" },
+      { "name": "experimental-features", "support": "partial" },
+      { "name": "sampling", "support": "partial" },
+      { "name": "roots", "support": "partial" },
+      { "name": "elicitation", "support": "partial" },
+      { "name": "context-management", "support": "full" },
+      { "name": "references", "support": "full" },
       {
         "name": "hooks",
         "support": "full",
-        "notes": "Currently only supports hooks for the main agent. Not for subagents."
-      }
+        "notes": "6 lifecycle hooks: beforeSubmitPrompt, beforeShellExecution, afterFileEdit, beforeReadFile, afterReadFile, and stop"
+      },
+      { "name": "slash-commands", "support": "full" },
+      { "name": "subagents", "support": "none" },
+      {
+        "name": "plugins",
+        "support": "partial",
+        "notes": "Supports VS Code extensions"
+      },
+      {
+        "name": "marketplace",
+        "support": "partial",
+        "notes": "Uses VS Code marketplace"
+      },
+      { "name": "system-prompt-override", "support": "partial" },
+      { "name": "other", "support": "partial" }
     ]
   },
   {
     "name": "github-copilot",
     "title": "VSCode (Copilot)",
     "link": "https://github.com/features/copilot",
-    "support": []
+    "support": [
+      { "name": "transport", "support": "full" },
+      { "name": "authorization", "support": "full" },
+      { "name": "utilities", "support": "full" },
+      { "name": "resources", "support": "full" },
+      { "name": "prompts", "support": "partial" },
+      { "name": "tools", "support": "full" },
+      { "name": "logging", "support": "full" },
+      { "name": "completion-autocomplete", "support": "full" },
+      { "name": "progress-notifications", "support": "full" },
+      { "name": "cancellation", "support": "full" },
+      { "name": "error-reporting", "support": "full" },
+      { "name": "experimental-features", "support": "partial" },
+      { "name": "sampling", "support": "full" },
+      { "name": "roots", "support": "full" },
+      { "name": "elicitation", "support": "full" },
+      { "name": "context-management", "support": "full" },
+      { "name": "references", "support": "full" },
+      { "name": "hooks", "support": "none" },
+      { "name": "slash-commands", "support": "full" },
+      { "name": "subagents", "support": "none" },
+      {
+        "name": "chat-modes",
+        "support": "full"
+      },
+      {
+        "name": "plugins",
+        "support": "full",
+        "notes": "GitHub Copilot Extensions from GitHub Marketplace"
+      },
+      {
+        "name": "marketplace",
+        "support": "full",
+        "notes": "GitHub Marketplace and VS Code marketplace"
+      },
+      {
+        "name": "system-prompt-override",
+        "support": "partial",
+        "notes": "Via custom chat modes"
+      },
+      { "name": "other", "support": "full" }
+    ]
   },
   {
     "name": "codex",
     "title": "Codex",
     "link": "https://openai.com/codex/",
-    "support": []
+    "support": [
+      { "name": "transport", "support": "full" },
+      { "name": "authorization", "support": "full" },
+      { "name": "utilities", "support": "full" },
+      { "name": "resources", "support": "full" },
+      { "name": "prompts", "support": "full" },
+      { "name": "tools", "support": "full" },
+      { "name": "logging", "support": "full" },
+      { "name": "completion-autocomplete", "support": "full" },
+      { "name": "progress-notifications", "support": "full" },
+      { "name": "cancellation", "support": "full" },
+      { "name": "error-reporting", "support": "full" },
+      { "name": "experimental-features", "support": "partial" },
+      { "name": "sampling", "support": "full" },
+      { "name": "roots", "support": "full" },
+      { "name": "elicitation", "support": "partial" },
+      { "name": "context-management", "support": "full" },
+      { "name": "references", "support": "full" },
+      { "name": "hooks", "support": "none" },
+      { "name": "slash-commands", "support": "none" },
+      { "name": "subagents", "support": "none" },
+      { "name": "plugins", "support": "none" },
+      { "name": "marketplace", "support": "none" },
+      { "name": "system-prompt-override", "support": "none" },
+      { "name": "other", "support": "partial" }
+    ]
   }
 ]

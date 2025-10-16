@@ -35,20 +35,15 @@ const FeatureCompatibilityTable: React.FC = () => {
   const featureSections = featuresData as FeatureSection[];
   const clients = clientsData as Client[];
 
-  const getSupportStatus = (
+  const getSupportData = (
     feature: Feature,
     client: Client
-  ): "supported" | "unsupported" | "unknown" => {
+  ): { support: "full" | "partial" | "none"; notes?: string } | null => {
     if (!client.support) {
-      return "unknown";
+      return null;
     }
-    if (client.support.includes(feature.name)) {
-      return "supported";
-    }
-    if (client.support.includes(`!${feature.name}`)) {
-      return "unsupported";
-    }
-    return "unknown";
+    const supportItem = client.support.find((item) => item.name === feature.name);
+    return supportItem || null;
   };
 
   return (
@@ -56,11 +51,11 @@ const FeatureCompatibilityTable: React.FC = () => {
       <table className="table table-zebra">
         <thead className="sticky top-0 z-10 bg-base-200">
           <tr>
-            <th className="text-left bg-base-200" style={{ maxWidth: "200px" }}>
+            <th className="text-left bg-base-200 text-lg" style={{ maxWidth: "200px" }}>
               Feature
             </th>
             {clients.map((client) => (
-              <th key={client.name} className="text-center">
+              <th key={client.name} className="text-center text-lg">
                 <a
                   href={client.link}
                   target="_blank"
@@ -77,7 +72,7 @@ const FeatureCompatibilityTable: React.FC = () => {
           {featureSections.map((section) => (
             <React.Fragment key={section.title}>
               <tr className="bg-base-300">
-                <td colSpan={clients.length + 1} className="font-bold">
+                <td colSpan={clients.length + 1} className="font-bold text-lg">
                   {section.title}
                 </td>
               </tr>
@@ -103,27 +98,33 @@ const FeatureCompatibilityTable: React.FC = () => {
                     </div>
                   </td>
                   {clients.map((client) => {
-                    const status = getSupportStatus(feature, client);
+                    const supportData = getSupportData(feature, client);
+                    const support = supportData?.support || "none";
+                    const notes = supportData?.notes;
+
                     return (
                       <td
                         key={`${feature.name}-${client.name}`}
                         className="text-center"
                       >
-                        <span
-                          className={`badge ${
-                            status === "supported"
-                              ? "badge-success badge-outline"
-                              : status === "unsupported"
-                              ? "badge-error badge-outline"
-                              : "badge-warning badge-outline"
-                          }`}
-                        >
-                          {status === "supported"
-                            ? "✓"
-                            : status === "unsupported"
-                            ? "✗"
-                            : "?"}
-                        </span>
+                        <div className="tooltip relative inline-block" data-tip={notes || ""}>
+                          <span
+                            className={`badge ${
+                              support === "full"
+                                ? "badge-success badge-outline"
+                                : support === "partial"
+                                ? "badge-warning badge-outline"
+                                : "badge-error badge-outline"
+                            }`}
+                          >
+                            {support === "full"
+                              ? "✓"
+                              : support === "partial"
+                              ? "◐"
+                              : "✗"}
+                          </span>
+                          {notes && <span className="absolute -top-1 -right-2 text-xs">*</span>}
+                        </div>
                       </td>
                     );
                   })}
