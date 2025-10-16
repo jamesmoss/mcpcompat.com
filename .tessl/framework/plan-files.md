@@ -18,8 +18,7 @@ A plan file is a markdown document (`.plan.md`) that records tasks to achieve a 
 2. **Task List**: Markdown checkboxes for each task
    - `- [ ]` for pending tasks
    - `- [x]` for completed tasks
-3. **User Tasks**: Mark with `{ @user }` directive for user-completed tasks
-4. **Task Outputs**: Document results as blockquotes after each task
+3. **Task Outputs**: Document results as blockquotes after each task
 
 ## Rules for Executing Plans with Plan Files
 
@@ -49,26 +48,12 @@ After completing each task, document comprehensively:
 - Add new tasks or remove irrelevant ones
 - Document reasons for significant changes
 
-### 3. User Task Handling
-For tasks marked with `{ @user }`:
-
-- **Stop immediately**: Present task to user exactly as written
-- **Wait for response**: Act on any instructions in user responses
-- **Don't assume**: Only complete user tasks when explicitly told the task is done
-- **Document accurately**:
-  - Record only what actually happened
-  - NEVER add details about what the user did unless they explicitly provide those details
-
 ## Best Practices
-1. Tasks should be:
-  - **Specific**: Clear, actionable completion criteria
-  - **Atomic**: One logical unit of work per task
-  - **Logically Ordered**: Arrange in execution sequence
-  - **Well Sized**: Break down complex goals into incremental atomic tasks
-
-2. Add `{ @user }` tasks strategically to:
-  - Delegate tasks requiring user action
-  - Get feedback at critical decision points
+Tasks should be:
+- **Specific**: Clear, actionable completion criteria
+- **Atomic**: One logical unit of work per task
+- **Logically Ordered**: Arrange in execution sequence
+- **Well Sized**: Break down complex goals into incremental atomic tasks
 
 ## Example
 
@@ -132,5 +117,6 @@ Add secure user authentication with email/password login.
 - [ ] Create authentication service spec
 - [ ] Implement login endpoint
 - [ ] Add session management
-- [ ] Test authentication flow { @user }
+- [ ] Test authentication flow end-to-end
+- [ ] Ask user to manually review and confirm authentication flow is working as expected
 ````

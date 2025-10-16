@@ -26,4 +26,4 @@ Each spec usually maps 1:1 to a code file. Larger units are composed of multiple
 - Can be edited or rebuilt by tools or agents
 - Each test implements exactly one test definition from the spec, and only verifies that exact case
 - Assumes code complies exactly with the defined APIs
-- Can be tagged to indicate prioritization: draft (default), locked, impl
+- Can be tagged to indicate prioritization: draft (default), locked

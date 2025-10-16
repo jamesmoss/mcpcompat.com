@@ -82,7 +82,6 @@ By default, the spec will have few if any test cases to start with, focus on get
 Tests should be prioritised in the following order:
 - Locked tests.  Make sure the code is able to pass these tests, they are core functional requirements that have been confirmed by the user.
 - Draft tests.  If draft tests have been generated, try to make the code pass. These tests have not been fully validated, so their definition or implementation may need to be refined until useful or removed altogether.
-- Impl tests.  If generated, then try to make the code pass.  These tests were created to capture details in an implementation that may not be important, so they may be deleted if they are no longer valid.
 
 Fixes should be applied in this preference order:
 1. (Preferred fix): Install dependencies explicitly listed in the spec if needed.

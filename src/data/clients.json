@@ -9,12 +9,24 @@
     "name": "cursor",
     "title": "Cursor",
     "link": "https://www.cursor.com",
+    "support": [
+      {
+        "name": "hooks",
+        "support": "full",
+        "notes": "Currently only supports hooks for the main agent. Not for subagents."
+      }
+    ]
+  },
+  {
+    "name": "github-copilot",
+    "title": "VSCode (Copilot)",
+    "link": "https://github.com/features/copilot",
     "support": []
   },
   {
-    "name": "vscode",
-    "title": "VSCode",
-    "link": "https://code.visualstudio.com",
+    "name": "codex",
+    "title": "Codex",
+    "link": "https://openai.com/codex/",
     "support": []
   }
 ]

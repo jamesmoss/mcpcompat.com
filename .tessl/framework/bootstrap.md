@@ -24,7 +24,7 @@ Using the supplied information, perform any necessary steps to get the project s
 
 ## 3. Update Project Configuration
 
-Record the project configuration information in `./AGENTS.md` and remove the "New Project Bootstrapping" section from the file. Make sure to include the test command(s).
+Record the project configuration information in `./AGENTS.md` and remove the "Project Bootstrapping" section from the file. Make sure to include the test command(s).
 
 When writing up the test command(s), beware of "watch mode" that might interfere with agentic testing feedback loops. For example: the `vitest` command will run in watch mode by default, which will appear to hang as it will not exit - instead the `vitest run` command should be used.
 

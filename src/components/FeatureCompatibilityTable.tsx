@@ -11,28 +11,29 @@ interface Feature {
   title: string;
   category: string;
   description: string;
-  link: string;
+  link?: string;
+}
+
+interface FeatureSection {
+  title: string;
+  description: string;
+  items: Feature[];
 }
 
 interface Client {
   name: string;
   title: string;
   link: string;
-  support: string[];
+  support: {
+    name: string;
+    support: "full" | "partial" | "none";
+    notes?: string;
+  }[];
 }
 
 const FeatureCompatibilityTable: React.FC = () => {
-  const features = featuresData as Feature[];
+  const featureSections = featuresData as FeatureSection[];
   const clients = clientsData as Client[];
-
-  // Group features by category
-  const groupedFeatures = features.reduce((acc, feature) => {
-    if (!acc[feature.category]) {
-      acc[feature.category] = [];
-    }
-    acc[feature.category].push(feature);
-    return acc;
-  }, {} as Record<string, Feature[]>);
 
   const getSupportStatus = (
     feature: Feature,
@@ -50,16 +51,14 @@ const FeatureCompatibilityTable: React.FC = () => {
     return "unknown";
   };
 
-  const formatCategoryTitle = (category: string): string => {
-    return category.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
-  };
-
   return (
     <div className="overflow-x-auto">
-      <table className="table table-zebra table-pin-rows">
-        <thead>
+      <table className="table table-zebra">
+        <thead className="sticky top-0 z-10 bg-base-200">
           <tr>
-            <th className="text-left">Feature</th>
+            <th className="text-left bg-base-200" style={{ maxWidth: "200px" }}>
+              Feature
+            </th>
             {clients.map((client) => (
               <th key={client.name} className="text-center">
                 <a
@@ -75,57 +74,63 @@ const FeatureCompatibilityTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(groupedFeatures).map(
-            ([category, categoryFeatures]) => (
-              <React.Fragment key={category}>
-                <tr className="bg-base-300">
-                  <td colSpan={clients.length + 1} className="font-bold">
-                    {formatCategoryTitle(category)}
-                  </td>
-                </tr>
-                {categoryFeatures.map((feature) => (
-                  <tr key={feature.name} className="hover">
-                    <td>
-                      <a
-                        href={feature.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link link-primary"
-                        title={feature.description}
-                      >
-                        {feature.title}
-                      </a>
-                    </td>
-                    {clients.map((client) => {
-                      const status = getSupportStatus(feature, client);
-                      return (
-                        <td
-                          key={`${feature.name}-${client.name}`}
-                          className="text-center"
+          {featureSections.map((section) => (
+            <React.Fragment key={section.title}>
+              <tr className="bg-base-300">
+                <td colSpan={clients.length + 1} className="font-bold">
+                  {section.title}
+                </td>
+              </tr>
+              {section.items.map((feature) => (
+                <tr key={feature.name} className="hover">
+                  <td style={{ maxWidth: "200px" }}>
+                    <div>
+                      {feature.link ? (
+                        <a
+                          href={feature.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link link-primary font-semibold"
                         >
-                          <span
-                            className={`badge ${
-                              status === "supported"
-                                ? "badge-success badge-outline"
-                                : status === "unsupported"
-                                ? "badge-error badge-outline"
-                                : "badge-warning badge-outline"
-                            }`}
-                          >
-                            {status === "supported"
-                              ? "✓"
+                          {feature.title}
+                        </a>
+                      ) : (
+                        <span className="font-semibold">{feature.title}</span>
+                      )}
+                      <div className="text-sm text-base-content/70 mt-1">
+                        {feature.description}
+                      </div>
+                    </div>
+                  </td>
+                  {clients.map((client) => {
+                    const status = getSupportStatus(feature, client);
+                    return (
+                      <td
+                        key={`${feature.name}-${client.name}`}
+                        className="text-center"
+                      >
+                        <span
+                          className={`badge ${
+                            status === "supported"
+                              ? "badge-success badge-outline"
                               : status === "unsupported"
-                              ? "✗"
-                              : "?"}
-                          </span>
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </React.Fragment>
-            )
-          )}
+                              ? "badge-error badge-outline"
+                              : "badge-warning badge-outline"
+                          }`}
+                        >
+                          {status === "supported"
+                            ? "✓"
+                            : status === "unsupported"
+                            ? "✗"
+                            : "?"}
+                        </span>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </React.Fragment>
+          ))}
         </tbody>
       </table>
     </div>

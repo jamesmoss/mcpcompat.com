@@ -13,25 +13,24 @@ function App() {
       </h1>
       <div className="mx-auto mb-8" style={{ maxWidth: "800px" }}>
         <p className="text-lg mb-4">
-          This table shows which AI agents support which features of the{" "}
+          Building{" "}
           <a
             href="https://modelcontextprotocol.io"
             target="_blank"
             rel="noopener noreferrer"
             className="link link-primary"
           >
-            Model Context Protocol (MCP)
-          </a>
-          . The MCP is an open protocol that enables AI applications to
-          integrate with external data sources and tools through a standardized
-          interface.
+            Model Context Protocol
+          </a>{" "}
+          servers and related tooling for agents can be hard. Different clients
+          support different part of the MCP spec. Even if an agent claims to
+          support the spec, there might be caveats. On top of this there's no
+          universal standard for defining, including, and loading context for
+          agents.
         </p>
-        <p className="text-lg">
-          If you're building MCP servers, this compatibility table is an
-          essential resource for understanding which clients support your target
-          features and to what extent. Use it to make informed decisions about
-          which capabilities to implement, test your server against different
-          clients, and ensure broad compatibility across the MCP ecosystem.
+        <p className="text-lg mb-4">
+          This table shows which AI agents support which features of MCP and how
+          they load context.
         </p>
       </div>
       <FeatureCompatibilityTable />
