@@ -45,7 +45,6 @@
     "support": [
       { "name": "transport", "support": "full" },
       { "name": "authorization", "support": "full" },
-      { "name": "utilities", "support": "full" },
       { "name": "resources", "support": "none", "notes": "Not yet supported" },
       {
         "name": "prompts",
@@ -92,7 +91,6 @@
     "support": [
       { "name": "transport", "support": "full" },
       { "name": "authorization", "support": "full" },
-      { "name": "utilities", "support": "full" },
       { "name": "resources", "support": "full" },
       { "name": "prompts", "support": "partial" },
       { "name": "tools", "support": "full" },
@@ -139,7 +137,6 @@
     "support": [
       { "name": "transport", "support": "full" },
       { "name": "authorization", "support": "full" },
-      { "name": "utilities", "support": "full" },
       { "name": "resources", "support": "full" },
       { "name": "prompts", "support": "full" },
       { "name": "tools", "support": "full" },

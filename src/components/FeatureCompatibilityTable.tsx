@@ -71,9 +71,12 @@ const FeatureCompatibilityTable: React.FC = () => {
         <tbody>
           {featureSections.map((section) => (
             <React.Fragment key={section.title}>
-              <tr className="bg-base-300">
-                <td colSpan={clients.length + 1} className="font-bold text-lg">
-                  {section.title}
+              <tr className="bg-base-100">
+                <td colSpan={clients.length + 1}>
+                  <div className="font-bold text-lg">{section.title}</div>
+                  <div className="text-sm text-base-content/70 mt-1">
+                    {section.description}
+                  </div>
                 </td>
               </tr>
               {section.items.map((feature) => (

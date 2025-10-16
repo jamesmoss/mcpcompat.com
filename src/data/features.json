@@ -18,13 +18,6 @@
         "link": "https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization"
       },
       {
-        "name": "utilities",
-        "title": "Utilities",
-        "category": "core",
-        "description": "Cross-cutting support for error handling, structured messages, and other shared mechanics.",
-        "link": "https://modelcontextprotocol.io/specification/2025-06-18"
-      },
-      {
         "name": "resources",
         "title": "Resources",
         "category": "server-feature",
@@ -92,21 +85,21 @@
         "title": "Sampling",
         "category": "client-feature",
         "description": "Servers can request clients to generate completions (LLM outputs) under user control.",
-        "link": "https://modelcontextprotocol.io/docs/concepts/sampling"
+        "link": "https://modelcontextprotocol.io/specification/2025-06-18/client/sampling"
       },
       {
         "name": "roots",
         "title": "Roots",
         "category": "client-feature",
         "description": "Clients expose filesystem roots or directories so servers know where they can safely operate.",
-        "link": "https://modelcontextprotocol.io/specification/2025-06-18/architecture"
+        "link": "https://modelcontextprotocol.io/specification/2025-06-18/client/roots"
       },
       {
         "name": "elicitation",
         "title": "Elicitation",
         "category": "client-feature",
         "description": "Clients can prompt the user for structured input during workflows triggered by servers.",
-        "link": "https://modelcontextprotocol.io/specification/2025-06-18/architecture"
+        "link": "https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation"
       }
     ]
   },
