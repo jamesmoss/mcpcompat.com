@@ -29,7 +29,8 @@ function App() {
           agents.
         </p>
         <p className="text-lg mb-4">
-          We're tracking support for features across AI agents. Contributions
+          We're tracking support for features across AI agents but things move
+          very quickly, we'll do our best to keep this up to date. Contributions
           welcome at{" "}
           <a
             href="https://github.com/jamesmoss/agentcompat.com"
@@ -55,6 +56,19 @@ function App() {
         </p>
       </div>
       <FeatureCompatibilityTable />
+      <footer className="text-center mt-12 py-6">
+        <p className="text-sm text-gray-600">
+          Built by{" "}
+          <a
+            href="https://moss.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link link-primary opacity-50"
+          >
+            James Moss
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
