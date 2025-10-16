@@ -1,4 +1,4 @@
-# MCP Compat
+# Agent Compat
 
 A comprehensive compatibility matrix for [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) clients, showing which features are supported by different AI coding assistants.
 

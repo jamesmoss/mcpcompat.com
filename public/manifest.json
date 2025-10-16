@@ -1,6 +1,6 @@
 {
-  "short_name": "MCP Compat",
-  "name": "MCP Compatibility Matrix",
+  "short_name": "Agent Compat",
+  "name": "Agent Compatibility Matrix",
   "icons": [
     {
       "src": "logo.svg",
